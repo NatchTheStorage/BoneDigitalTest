@@ -14,10 +14,10 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Shop() {
-    const [period, setPeriod] = useState<TimePeriodType>(CurrentTimePeriod());
+    const [period, setPeriod] = useState<TimePeriodType>(CurrentTimePeriod);
 
     const updatePeriod = (value: string) => {
         setPeriod(value as TimePeriodType);

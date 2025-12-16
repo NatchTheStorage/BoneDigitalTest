@@ -8,8 +8,7 @@ export enum TimePeriod {
 
 export type TimePeriodType = TimePeriod.morning | TimePeriod.afternoon | TimePeriod.evening | TimePeriod.night | TimePeriod.everything
 
-
-export const CurrentTimePeriod = (): TimePeriodType => {
+export function CurrentTimePeriod(): TimePeriodType {
   const hour = new Date().getHours()
   if (hour >= 6 && hour < 11)
     return TimePeriod.morning;

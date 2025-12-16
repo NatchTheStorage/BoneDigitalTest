@@ -7,7 +7,7 @@ type HeroText = {
   title: string;
   message: string;
 }
-const heroMessage = (period: TimePeriod): HeroText => {
+function heroMessage(period: TimePeriod): HeroText {
   switch (period) {
     case TimePeriod.morning:
       return { title: "Our Morning Collection", message: "Good morning! Start your day with our morning essentials." };
@@ -22,7 +22,7 @@ const heroMessage = (period: TimePeriod): HeroText => {
   }
 };
 
-export const heroBackground = (period: TimePeriod): string => {
+export function heroBackground(period: TimePeriod): string {
   switch (period) {
     case TimePeriod.morning:
       return "linear-gradient(270deg, #b5ce51ff, #FFF1B5)";
