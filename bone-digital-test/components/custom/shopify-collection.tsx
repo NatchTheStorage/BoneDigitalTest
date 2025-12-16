@@ -1,6 +1,6 @@
 'use client'
 
-import { CollectionHtml } from './shopify-collection-html';
+import CollectionHtml from './shopify-collection-html';
 
 export type ShopifyCollectionProps = {
   handle: string;
@@ -8,6 +8,6 @@ export type ShopifyCollectionProps = {
 
 // My understanding of Shadow DOM is that this component would be encapsulated to use its own stykles
 
-export const ShopifyCollection = ({ handle }: ShopifyCollectionProps) => {
+export default function ShopifyCollection({ handle }: ShopifyCollectionProps) {
   return (<div dangerouslySetInnerHTML={{ __html: CollectionHtml(handle) }}></div>);
 }

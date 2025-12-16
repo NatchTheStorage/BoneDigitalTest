@@ -9,6 +9,6 @@ const baseHtml = `
     public-access-token="794f2dae555a76b844c5f79787f4fa09"
   />`;
 
-export function ShopifyBaseHtml() {
+export default function ShopifyBaseHtml() {
   return (<div dangerouslySetInnerHTML={{ __html: baseHtml }}></div>);
 }

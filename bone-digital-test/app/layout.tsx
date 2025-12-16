@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ShopifyBaseHtml } from "@/components/custom/shopify-base-html";
+import ShopifyBaseHtml from "@/components/custom/shopify-base-html";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

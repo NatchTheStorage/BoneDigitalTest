@@ -385,6 +385,6 @@ const styleHtml = `
   }
   </style>
 `;
-export function ShopifyStyle() {
+export default function ShopifyStyle() {
   return (<div dangerouslySetInnerHTML={{ __html: styleHtml }}></div>);
 }

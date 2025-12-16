@@ -1,6 +1,6 @@
 // The raw HTML for the Shopify collection component is kept seperate to keep things tidy
 
-export const CollectionHtml = (handle: string) => {
+export default function CollectionHtml(handle: string): string {
   return (`<div>
     <div style="display: flex; align-items: center; padding: 16px; gap: 16px;">
       <div style="width: 80%">

@@ -38,7 +38,7 @@ export const heroBackground = (period: TimePeriod): string => {
 }
 
 // rough implementation of shadow DOM to encapsulate styles done here
-export const ShopHero = (period: TimePeriodType) => {
+export default function ShopHero(period: TimePeriodType) {
   return (
     <root.div>
       <div style={{
