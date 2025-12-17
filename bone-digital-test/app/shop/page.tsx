@@ -53,6 +53,7 @@ export default function Shop() {
                 {/* If I was to use shadow roots, I would use it in this area or inside */}
                 {/* As my implementation didn't work out - I'm thinking due to how I implemented the raw HTML in the child component - I'm semi mimicking the concept with a stylesheet to override the globals in this area */}
                 <ShopifyStyle />
+                {/* Not so ideal way to handle collections - as there is a potential disconnect between the server names and codebase */}
                 <ShopifyCollection handle={`${period}`} />
             </div>
         </div>
