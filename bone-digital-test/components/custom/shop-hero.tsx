@@ -38,21 +38,62 @@ export function heroBackground(period: TimePeriod): string {
 }
 
 // rough implementation of shadow DOM to encapsulate styles done here
+// Ran out of time - would rather put the css elsewhere and inject them in
 export default function ShopHero(period: TimePeriodType) {
+  const styles = `
+    h2 {
+      font-size: 40px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .hero-text {
+      margin-left: 64px; 
+      color: white;
+    }
+
+    .hero-container {
+      height: 40vh; 
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      background-size: 400% 400%;
+      background: ${heroBackground(period)};
+      -webkit-animation: AnimationName 15s ease infinite;
+      -moz-animation: AnimationName 15s ease infinite;
+      animation: AnimationName 15s ease infinite;
+    }
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+  `;
   return (
-    <root.div>
-      <div style={{
-        background: heroBackground(period),
-        height: '40vh', minHeight: 96,
-        width: '100%', display: 'flex',
-        alignItems: 'center', justifyContent: 'left', backgroundSize: '400% 400%',
-      }}>
+    <root.div >
+      <div>
+        <style type="text/css">{styles}</style>
+        <div className="hero-container">
 
-        <div style={{ marginLeft: '64px', color: 'white' }}>
-          <h2 style={{ fontSize: '40px', margin: 0 }}>{heroMessage(period).title}</h2>
-          <p style={{ fontSize: '16px' }}>{heroMessage(period).message}</p></div>
+          <div className='hero-text'>
+            <h2>{heroMessage(period).title}</h2>
+            <p>{heroMessage(period).message}</p></div>
+        </div>
       </div>
-    </root.div >
-
+    </root.div>
   );
 };
