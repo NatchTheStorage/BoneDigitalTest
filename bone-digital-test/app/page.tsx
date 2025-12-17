@@ -9,6 +9,7 @@ import { useState } from "react";
 export default function Home() {
   const [period, setPeriod] = useState<TimePeriodType>(CurrentTimePeriod());
 
+  // Selects a time period that is not the current one
   const randomiseTimePeriod = () => {
     const periods = Object.values(TimePeriod);
     const filteredPeriods = periods.filter((c) => c !== period);
@@ -17,12 +18,13 @@ export default function Home() {
     setPeriod(newPeriod);
   }
 
+  // Using tailwind here instead
   return (
     <div style={{ background: heroBackground(period) }} className="home-bg-gradient h-screen w-full transition-all transition-normal">
       <div className="flex flex-col items-center justify-center h-full text-white space-y-6">
         <h1 className="text-7xl">The Shop™</h1>
         <p>by Natch Surana</p>
-        <div className="button-start">
+        <div className="button-start opacity-1">
           <Link href={'/shop'}><Button className="text-xl cursor-pointer bg-gray-800 rounded-full">Begin your journey</Button></Link>
         </div>
 

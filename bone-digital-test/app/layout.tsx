@@ -22,6 +22,10 @@ export const metadata: Metadata = {
 // or other global settings if needed
 
 // Would use it for global time period control if I had more time
+// Can wrap the root layout so all children can access the state via setter/getter functions
+// eg
+// createTimePeriodStore - initial state is output from time function
+// create setter getter functions and a reset function
 
 export default function RootLayout({
   children,
@@ -32,8 +36,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-
       >
+        {/* Preloading the Shopify contexts here */}
         <ShopifyBaseHtml />
         {children}
       </body>
