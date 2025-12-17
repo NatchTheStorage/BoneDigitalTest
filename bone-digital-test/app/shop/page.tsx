@@ -24,9 +24,12 @@ export default function Shop() {
     }
 
     // Due to implementation of the HTML, forcibly changing the time causes the page to scroll to top before reloading
+    // downside - will not update automatically without a refresh
     return (
         <div>
+            {/* This should usually go in a layout component */}
             <NavMenu />
+
             {ShopHero(period)}
             <div className="container pt-8">
                 <div>
@@ -52,7 +55,6 @@ export default function Shop() {
                 <ShopifyStyle />
                 <ShopifyCollection handle={`${period}`} />
             </div>
-
         </div>
     );
 }

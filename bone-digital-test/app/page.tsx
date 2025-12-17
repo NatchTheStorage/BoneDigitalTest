@@ -23,7 +23,7 @@ export default function Home() {
         <h1 className="text-7xl">The Shop™</h1>
         <p>by Natch Surana</p>
         <div className="button-start">
-          <Link href={'/shop'}><Button className="text-xl cursor-pointer">Begin your journey</Button></Link>
+          <Link href={'/shop'}><Button className="text-xl cursor-pointer bg-gray-800 rounded-full">Begin your journey</Button></Link>
         </div>
 
         <Button className="opacity-20 rounded-full" onClick={randomiseTimePeriod}>!</Button>
